@@ -24,6 +24,8 @@ public class Run {
             System.out.println(key + " " + st.get(key));
         }
 		
+		System.out.println("NUMERO " + st.get("by").intValue());
+		
 		System.out.println("longestPrefixOf(\"shellsort\"):");
 		System.out.println(st.longestPrefixOf("shellsort"));
 		
