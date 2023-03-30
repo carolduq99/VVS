@@ -37,6 +37,7 @@ public class Run {
         for (String s : st.keysThatMatch(".he.l."))
         	System.out.println(s);
 		
+        System.out.println("SIZE " + st.size());
 		sc.close();
 	}
 
