@@ -180,6 +180,7 @@ public class TST<T> {
         Node<T> x = get(root, prefix, 0);
         if (x == null) 
         	return queue;
+        System.out.println("VAL: " + x.val);
         if (x.val != null) 
         	queue.add(prefix);
         collect(x.mid, new StringBuilder(prefix), queue);
