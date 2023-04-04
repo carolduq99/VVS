@@ -1,0 +1,71 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title> Logic Coverage</title>
+<style>[_nghost-bwi-c52]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+<body data-new-gr-c-s-check-loaded="8.905.0" data-gr-ext-installed="" bgcolor="#DDEEDD">
+<p align="center"><b><font size="5">Logic Coverage Web Application</font></b></p>
+
+<script>function copyToClipboard(text) {window.prompt("Copy to clipboard: Ctrl+C", text);}</script>
+<form name="logicCoverageForm" method="post" action="LogicCoverage"> 
+<table width="800" cellspacing="0" cellpadding="0" border="1" bgcolor="#EEFFEE" align="center"> 
+<tbody><tr><td align="justify">Please enter your logic expression in the text box below, using   
+        the following logic operators. The variables can be any string. Parentheses can be used in the logic expression. 
+(Please be aware that this application gets slow for expressions that have more than 5 or 6 variables.)
+        </td></tr> 
+<tr><td> <table width="100%" border="0"> 
+	<tbody><tr align="center"><td align="right"> Not :<font size="4"> <b>!</b></font></td> 
+		<td width="20%"> And :<font size="4"> <b>&amp;</b></font></td> 
+		<td align="left"> Or :<font size="4"> <b>|</b></font></td></tr> 
+	<tr align="center"><td align="right"> Implication :<font size="4"> <b>&gt;</b></font></td> 
+		<td> Exclusive Or :<font size="4"> <b>^</b></font></td> 
+		<td align="left"> Equivalence :<font size="4"> <b>=</b></font></td></tr> 
+<tr><td colspan="3" align="center"><font size="3" face="Garamond"> P =  
+	<input type="text" name="expression" size="70"></font></td></tr> 
+	</tbody></table> 
+	</td>
+	</tr>
+	</tbody></table><table width="800" align="center"> 
+	<tbody><tr><td></td></tr> <tr><td></td></tr>
+	<tr><td></td></tr> <tr><td></td></tr>
+<tr><td width="20%" align="right">Test Requirements:</td> 
+	<td colspan="3" width="80%">
+	<input type="submit" value="Truth Table" name="action">  </td></tr>
+ <tr><td></td></tr> <tr><td></td></tr>
+	<tr>
+ <td width="20%" align="right">Tests:</td>
+	<td colspan="3" width="80%">
+	<input type="submit" value="GACC" name="action">   
+	&nbsp;<input type="submit" value="CACC" name="action">   
+	&nbsp;<input type="submit" value="RACC" name="action">   
+	&nbsp;<input type="submit" value="GICC" name="action"> 
+	&nbsp;<input type="submit" value="RICC" name="action"> </td></tr>
+ <tr><td></td></tr> <tr><td></td></tr>
+	<tr>
+ <td width="20%" align="right">Others:</td>
+	<td aligh="center" colspan="3" width="80%">
+	<input type="submit" value="New Expression" name="action">	&nbsp;<input type="submit" value="Graph Coverage" name="action"> 
+	&nbsp;<input type="submit" value="Data Flow Coverage" name="action"> 
+	&nbsp;<input type="submit" value="Minimal-MUMCUT Coverage" name="action"></td></tr> 
+<tr style="visibility:collapse;">
+  <td width="15%" align="right"><b>Share Expression:</b></td>
+  <td aligh="center" width="85%">
+	  &nbsp;<img onclick="javascript:copyToClipboard('https://cs.gmu.edu:8443/offutt/coverage/LogicCoverage?')" src="Logic%20Coverage_ficheiros/share.png" style="width:70px;height:20px;">  </td>
+</tr>
+</tbody></table>
+    </form>
+
+<p style="font-size:80%;font-family:monospace">
+
+Companion software
+
+<br>to <i>Introduction to Software Testing</i>, Ammann and Offutt.
+
+<br>Implementation by Wuzhi Xu, Nan Li, and Lin Deng.
+
+<br>© 2007-2017, all rights reserved.
+
+<br>Last update: 05-May-2017</p>
+
+
+
+</body><app-content ng-version="14.2.0"></app-content><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

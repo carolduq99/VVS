@@ -1,0 +1,120 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Graph Coverage</title>
+<style>[_nghost-sok-c52]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+<body data-new-gr-c-s-check-loaded="8.905.0" data-gr-ext-installed="" bgcolor="#DDEEDD">
+<p style="text-align:center;font-size:150%;font-weight:bold">Graph Coverage Web Application</p>
+<script src="Graph%20Coverage_ficheiros/jquery-min.js"></script>
+<script src="Graph%20Coverage_ficheiros/springy.js"></script>
+<script src="Graph%20Coverage_ficheiros/springyui.js"></script>
+<script>function copyToClipboard(text) {window.prompt("Copy to clipboard: Ctrl+C", text);}</script><form name="graphCoverageForm" method="post" action="GraphCoverage">
+<div style="text-align:center; font-weight:bold; font-size:125%">Graph Information</div>
+<table id="tableForm" width="100%" cellspacing="0" cellpadding="0" border="1" bgcolor="#EEFFEE">
+<tbody><tr>
+  <td width="33%">
+    <table border="0">
+      <tbody><tr>
+        <td>
+          Please enter your <font color="green"><b>graph edges</b></font> in the text box below. 
+        	Put each edge in one line. Enter edges as pairs of nodes, separated by spaces.(e.g.: 1 3)
+        </td>
+      </tr>
+      <tr align="center">
+        <td> <textarea rows="5" name="edges" cols="25"></textarea></td>
+      </tr>
+		</tbody></table>
+  </td>
+  <td width="33%" valign="top">
+	   <table border="0">
+      <tbody><tr><td>
+        Enter <font color="green"><b>initial nodes</b></font> below (can be more than one), separated by spaces. If the text box  
+        below is empty, the first node in the left box will be the initial node.
+      </td></tr>
+      <tr align="center">
+        <td>
+          <p> &nbsp;</p><input type="text" name="initialNode" size="5">
+        </td>
+      </tr>
+		</tbody></table>
+  </td>
+  <td width="34%" valign="top">
+		<table border="0">
+      <tbody><tr><td>Enter <font color="green"><b>final nodes</b></font> below (can be more than one), 
+        separated by spaces.
+      </td></tr>
+      <tr align="center">
+        <td>
+          <p> &nbsp;</p><input type="text" name="endNode" size="30">
+        </td>
+      </tr>
+		</tbody></table>
+  </td>
+</tr>
+</tbody></table>
+<table width="100%">
+<tbody><tr><td></td></tr> <tr><td></td></tr>
+<tr><td></td></tr> <tr><td></td></tr>
+<tr>
+  <td width="15%" align="right"><b>Test Requirements:</b></td>
+	 <td colspan="3" width="85%">
+    <input type="submit" value="Nodes" name="action">
+ 	&nbsp;<input type="submit" value="Edges" name="action">
+		&nbsp;<input type="submit" value="Edge-Pair" name="action">
+		&nbsp;<input type="submit" value="Simple Paths" name="action">
+    &nbsp;<input type="submit" value="Prime Paths" name="action">
+  </td>
+</tr>
+<tr><td></td></tr> <tr><td></td></tr>
+<tr>
+  <td width="15%" align="right"><b>Test Paths:</b></td>
+	 <td colspan="3" width="85%"> Algorithm 1: Slower, more test paths, shorter test paths									&nbsp; <input type="submit" value="Node Coverage" name="action">
+									&nbsp;<input type="submit" value="Edge Coverage" name="action">
+      							&nbsp;<input type="submit" value="Edge-Pair Coverage" name="action">
+  	   								&nbsp;<input type="submit" value="Prime Path Coverage" name="action">
+   </td>
+</tr>
+<tr>
+  <td width="15%" align="right"></td>
+	 <td colspan="3" width="85%"> Algorithm 2: Faster, fewer test paths, longer test paths                                    &nbsp; &nbsp; <input type="submit" value="Edge Coverage" name="algorithm2"> 
+                                    &nbsp; <input type="submit" value="Edge-Pair Coverage" name="algorithm2"> 
+                                    &nbsp; <input type="submit" value="Prime Path Coverage" name="algorithm2"> 
+   </td>
+</tr>
+<tr>
+  <td width="15%" align="right"></td>
+	 <td colspan="3" width="85%"> Algorithm 1 is our original, not 
+particularly clever, algorithm to find test paths from graph coverage 
+test requirements. In our 2012 ICST
+    paper, "<em>Better Algorithms to Minimize the Cost of Test Paths</em>,"
+ we described an algorithm that combines test requirements to produce 
+fewer, 
+    but longer test paths (algorithm 2). Users can evaluate the 
+tradeoffs between more but shorter test paths and fewer but longer  
+    test paths and choose the appropriate algorithm.
+   </td>
+</tr>
+<tr><td></td></tr> <tr><td></td></tr>
+<tr>
+  <td width="15%" align="right"><b>Other Tools:</b></td>
+  <td aligh="center" colspan="3" width="85%">
+	  <input type="submit" value="New Graph" name="action">
+		&nbsp;<input type="submit" value="Data Flow Coverage" name="action">
+		&nbsp;<input type="submit" value="Logic Coverage" name="action">
+		&nbsp;<input type="submit" value="Minimal-MUMCUT Coverage" name="action">
+  </td>
+</tr>
+<tr><td></td></tr> <tr><td></td></tr>
+<tr style="visibility:collapse;">
+  <td width="15%" align="right"><b>Share Graph:</b></td>
+  <td aligh="center" width="85%">
+	  &nbsp;<img onclick="javascript:copyToClipboard('https://cs.gmu.edu:8443/offutt/coverage/GraphCoverage?')" src="Graph%20Coverage_ficheiros/share.png" style="width:70px;height:20px;">  </td>
+</tr>
+</tbody></table>
+<p style="font-size:80%;font-family:monospace">
+Companion software
+<br>to <i>Introduction to Software Testing</i>, Ammann and Offutt.
+<br>Implementation by Wuzhi Xu, Nan Li, Lin Deng, and Scott Brown.
+<br>© 2007-2017, all rights reserved.
+<br>Last update: 22-Feb-2017
+</p>
+</form></body><app-content ng-version="14.2.0"></app-content><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
