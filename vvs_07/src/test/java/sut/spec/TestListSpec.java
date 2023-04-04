@@ -41,6 +41,25 @@ public class TestListSpec {
 		
 		assertTrue("spec: removeFirst (addFirst (L, E)) = L", list.equals(newList));
 	}	
+	
+	@Property
+	public void testIsEmptySize(LinkedList<Integer> l) {
+		assertEquals(l.isEmpty(), l.size()==0);
+		
+	}
+	
+	@Property
+	public void sizeMake() {
+		assertEquals(emptyList.size(),0);
+	}
+	
+	@Property
+	public void sizeAddFirst(LinkedList<Integer>  list, int e) {
+		int size = list.size();
+		list.addFirst(e);
+		assertEquals(list.size() - 1, size);
+	}
+	
 }
 
 
