@@ -230,5 +230,22 @@ public class TST<T> {
         if (c == '.' || c > x.c) 
         	collect(x.right, prefix, i, pattern, queue);
     }
+    
+    public String toString() {
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(toStringAux());
+		return null;
+    	
+    }
+    
+    private Object toStringAux() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+
+
 
 }
