@@ -1,13 +1,13 @@
 package sut;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.LinkedList;
-import java.util.Queue;
 
 import org.junit.jupiter.api.Test;
 
-public class TSTTest {
+public class TST_LineBranchCov {
 
 	@Test
 	public void testSize() {
@@ -90,15 +90,26 @@ public class TSTTest {
 		assertEquals(3, tst.get("k1").intValue());
 	}
 
+	
+	
+	
 	@Test
 	public void testLPO_QueryNull(){
 		TST<Integer> tst = new TST<>();
+		tst.put("k1", 0);
 		assertThrows(IllegalArgumentException.class, () -> tst.longestPrefixOf(null));  
 	}
+	
+	@Test
+	public void testLPO_EmptyTrie(){
+		TST<Integer> tst = new TST<>();
+		assertEquals("", tst.longestPrefixOf("a"));
+		}
 
 	@Test
 	public void testLPO_QueryLengthZero(){
 		TST<Integer> tst = new TST<>();
+		tst.put("k1", 0);
 		assertNull(tst.longestPrefixOf(""));
 	}
 
@@ -110,10 +121,12 @@ public class TSTTest {
 		tst.put("she", 2);
 		tst.put("mar", 3);
 		assertEquals("shells", tst.longestPrefixOf("shellsort"));
+		assertEquals("she", tst.longestPrefixOf("shell"));
+		
 	}
 
 	@Test
-	public void testLongestPrefixOfNoMatch() {
+	public void  testLPO_NoMatch() {
 		TST<Integer> tst = new TST<>();
 		tst.put("sea", 1);
 		tst.put("shore", 2);

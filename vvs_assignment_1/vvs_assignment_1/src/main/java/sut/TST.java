@@ -104,24 +104,24 @@ public class TST<T> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public void put(String key, T val) {
-        if (key == null)
-            throw new IllegalArgumentException("calls put() with null key");
-        if (!contains(key)) 
-        	n++;
-        root = put(root, key, val, 0);
+        if (key == null)				//1
+            throw new IllegalArgumentException("calls put() with null key"); 	//2
+        if (!contains(key)) 		//3
+        	n++;		//4
+        root = put(root, key, val, 0);		//5
     }
 
     private Node<T> put(Node<T> x, String key, T val, int d) {
-        char c = key.charAt(d);
-        if (x == null) {
-            x = new Node<>();
-            x.c = c;
-        }
-        if      (c < x.c)               x.left  = put(x.left,  key, val, d);
-        else if (c > x.c)               x.right = put(x.right, key, val, d);
-        else if (d < key.length() - 1)  x.mid   = put(x.mid,   key, val, d+1);
-        else                            x.val   = val;
-        return x;
+        char c = key.charAt(d);			//1
+        if (x == null) {			//2
+            x = new Node<>();			//3
+            x.c = c;		//4
+        }			//5
+        if      (c < x.c)               x.left  = put(x.left,  key, val, d); 	//6
+        else if (c > x.c)               x.right = put(x.right, key, val, d);	//7
+        else if (d < key.length() - 1)  x.mid   = put(x.mid,   key, val, d+1);	//8
+        else                            x.val   = val;							//9
+        return x;		//10
     }
 
     /**
@@ -133,24 +133,44 @@ public class TST<T> {
      * @throws IllegalArgumentException if {@code query} is {@code null}
      */
     public String longestPrefixOf(String query) {
-        if (query == null)
+    	System.out.println("0");
+        if (query == null) {
+        	System.out.println("1");
             throw new IllegalArgumentException("calls longestPrefixOf() with null argument");
-        if (query.length() == 0) 
-        	return null;
+        }
+        System.out.println("2");
+        if (query.length() == 0) {
+        	System.out.println("3");
+        	return null;}
+        System.out.println("4");
         int length = 0;
         Node<T> x = root;
         int i = 0;
+        
+        System.out.println("5");
         while (x != null && i < query.length()) {
+        	
+        	System.out.println("5");
+        	System.out.println("6");
             char c = query.charAt(i);
-            if      (c < x.c) x = x.left;
-            else if (c > x.c) x = x.right;
+            //System.out.println("c: " + c);
+            //System.out.println("x.c: " + x.c);
+            if      (c < x.c) { x = x.left; System.out.println("7");}
+            else if (c > x.c) {x = x.right; System.out.println("8\n9");}
             else {
+            	System.out.println("8\n10");
                 i++;
-                if (x.val != null) 
+                
+                if (x.val != null) {
+                	System.out.println("11");
                 	length = i;
+                }
+                System.out.println("12");
                 x = x.mid;
             }
         }
+        System.out.println("5");
+        System.out.println("13");
         return query.substring(0, length);
     }
 
@@ -230,18 +250,6 @@ public class TST<T> {
         if (c == '.' || c > x.c) 
         	collect(x.right, prefix, i, pattern, queue);
     }
-    
-    public String toString() {
-    	StringBuilder sb = new StringBuilder();
-    	sb.append(toStringAux());
-		return null;
-    	
-    }
-    
-    private Object toStringAux() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 
