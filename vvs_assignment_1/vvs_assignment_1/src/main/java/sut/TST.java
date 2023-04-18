@@ -148,6 +148,7 @@ public class TST<T> {
         int i = 0;
         
         System.out.println("5");
+        
         while (x != null && i < query.length()) {
         	
         	System.out.println("5");
