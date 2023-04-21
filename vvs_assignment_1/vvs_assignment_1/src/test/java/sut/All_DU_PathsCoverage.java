@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class All_DU_PathsCoverage {
 
 	
-	//EDGE-PAIR-COVERAGE
+	//ALL_DU PATHS-COVERAGE
 	@Test
 	public void edgePairCoverage() throws FileNotFoundException {
 		Scanner sc = new Scanner(new File("data/someWords.txt"));
