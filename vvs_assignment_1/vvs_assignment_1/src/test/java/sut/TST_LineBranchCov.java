@@ -206,21 +206,36 @@ public class TST_LineBranchCov {
 		tst.put("by", 2);
 		tst.put("shore", 3);
 		tst.put("sea", 4);
+		tst.put("ana", 4);
 		
 		
 		ArrayList<String> expected = new ArrayList<>();
 		expected.add("sells");
 		expected.add("shore");
+		expected.add("by");
+		expected.add("ana");
 		
 		ArrayList<String> atual = new ArrayList<>();
 		for(String k : tst.keysThatMatch("s....")) {
 			atual.add(k); 
 		}
+		
+		for(String k : tst.keysThatMatch(".y")) {
+			atual.add(k); 
+		}
+		
+		for(String k : tst.keysThatMatch("a.a")) {
+			atual.add(k); 
+		}
+		
+		
 
 		assertEquals(expected, atual);
 
 	}
 
+	
+	
 
 
 }

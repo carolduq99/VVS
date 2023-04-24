@@ -8,8 +8,6 @@ import java.util.*;
 import org.junit.jupiter.api.Test;
 
 public class LogicCoverage_CoC {
-
-	
 	
 	@Test
 	public void queryNull(){
@@ -30,9 +28,6 @@ public class LogicCoverage_CoC {
 		TST<Integer> tst = new TST<>();
 		assertNull(tst.longestPrefixOf(""));
 	}
-
-	
-
 
 	@Test
 	public void query(){

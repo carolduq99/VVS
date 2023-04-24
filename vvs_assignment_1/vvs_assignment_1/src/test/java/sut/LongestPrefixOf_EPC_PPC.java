@@ -10,35 +10,35 @@ public class LongestPrefixOf_EPC_PPC {
 
 	
 //	//EDGE-PAIR-COVERAGE
-//	@Test
-//	public void edgePairCoverage() throws FileNotFoundException{
-//		Scanner sc = new Scanner(new File("data/someWords.txt"));
-//		TST<Integer> tst = new TST<>();
-//		assertEquals("", tst.longestPrefixOf("a"));
-//		System.out.println("******************");
-//		
-//		int i=0;
-//		while(sc.hasNextLine()) {
-//			String[] keys = sc.nextLine().split(" ");
-//			for(String key : keys)
-//				tst.put(key, ++i);
-//		}
-//		
-//		assertThrows(IllegalArgumentException.class, () -> tst.longestPrefixOf(null)); 
-//		System.out.println("******************");
-//		assertNull(tst.longestPrefixOf("")); 
-//		System.out.println("******************shell");
-//		assertEquals("she", tst.longestPrefixOf("shell"));  
-//		System.out.println("******************bycicle");
-//		assertEquals("by", tst.longestPrefixOf("bycicle"));    
-//		System.out.println("******************then");
-//		assertEquals("the", tst.longestPrefixOf("then"));
-//		System.out.println("******************a");
-//		assertEquals("", tst.longestPrefixOf("a"));
-//		System.out.println("******************z");
-//		assertEquals("", tst.longestPrefixOf("z"));
-//		
-//	}
+	@Test
+	public void edgePairCoverage() throws FileNotFoundException{
+		Scanner sc = new Scanner(new File("data/someWords.txt"));
+		TST<Integer> tst = new TST<>();
+		assertEquals("", tst.longestPrefixOf("a"));
+		System.out.println("******************");
+		
+		int i=0;
+		while(sc.hasNextLine()) {
+			String[] keys = sc.nextLine().split(" ");
+			for(String key : keys)
+				tst.put(key, ++i);
+		}
+		
+		assertThrows(IllegalArgumentException.class, () -> tst.longestPrefixOf(null)); 
+		System.out.println("******************");
+		assertNull(tst.longestPrefixOf("")); 
+		System.out.println("******************shell");
+		assertEquals("she", tst.longestPrefixOf("shell"));  
+		System.out.println("******************bycicle");
+		assertEquals("by", tst.longestPrefixOf("bycicle"));    
+		System.out.println("******************then");
+		assertEquals("the", tst.longestPrefixOf("then"));
+		System.out.println("******************a");
+		assertEquals("", tst.longestPrefixOf("a"));
+		System.out.println("******************z");
+		assertEquals("", tst.longestPrefixOf("z"));
+		
+	}
 	
 	
 //	//PRIME-PATH-COVERAGE
