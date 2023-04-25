@@ -30,7 +30,7 @@ public class LogicCoverage_CoC {
 	}
 
 	@Test
-	public void query(){
+	public void normalQuery(){
 		TST<Integer> tst = new TST<>();
 		tst.put("shells", 1);
 		assertEquals("shells", tst.longestPrefixOf("shells"));

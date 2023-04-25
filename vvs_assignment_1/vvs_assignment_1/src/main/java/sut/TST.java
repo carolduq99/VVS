@@ -238,7 +238,6 @@ public class TST<T> {
 	@Override
 	public boolean equals(Object t) {
 		TST t2 = (TST) t;
-		System.out.println("SIZE IGUAL? " + (this.size() == t2.size()));
 		if(this.size() == t2.size()) {
 			for (String k1 : this.keys()) {
 				if(!t2.contains(k1) || this.get(k1) != t2.get(k1)) {
@@ -252,169 +251,7 @@ public class TST<T> {
 
 	}
 
-
-
-
-
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		toString(root, 0, sb);
-		return sb.toString();
-	}
-
-	private void toString(Node node, int level, StringBuilder sb) {
-		if (node == null) {
-			return;
-		}
-		for (int i = 0; i < level; i++) {
-			sb.append("  ");
-		}
-		sb.append("node: ");
-		if (node == root) {
-			sb.append(root.c);
-		} else {
-			sb.append(node.c);
-		}
-		if (node.val != null) {
-			sb.append("(").append(node.val).append(")");
-		}
-		sb.append(", left: ");
-		if (node.left == null) {
-			sb.append("null");
-		} else {
-			sb.append("\"").append(node.left.c).append("\"");
-		}
-		sb.append(", mid: ");
-		if (node.mid == null) {
-			sb.append("null");
-		} else {
-			sb.append("\"").append(node.mid.c).append("\"");
-		}
-		sb.append(", right: ");
-		if (node.right == null) {
-			sb.append("null");
-		} else {
-			sb.append("\"").append(node.right.c).append("\"");
-		}
-		sb.append("\n");
-		toString(node.left, level + 1, sb);
-		toString(node.mid, level + 1, sb);
-		toString(node.right, level + 1, sb);
-	}
-
-
-
-
-//	public void delete(String key) {
-//	    if (key == null) {
-//	        throw new IllegalArgumentException("calls delete() with null key");
-//	    }
-//	    if (!contains(key)) {
-//	        return; // key not in tree
-//	    }
-//	    root = delete(root, key, 0);
-//	    n--;
-//	}
-//
-//	private Node<T> delete(Node<T> x, String key, int d) {
-//	    if (x == null) {
-//	        return null;
-//	    }
-//	    char c = key.charAt(d);
-//	    if (c < x.c) {
-//	        x.left = delete(x.left, key, d);
-//	    } else if (c > x.c) {
-//	        x.right = delete(x.right, key, d);
-//	    } else if (d < key.length() - 1) {
-//	        x.mid = delete(x.mid, key, d + 1);
-//	    } else {
-//	        x.val = null;
-//	    }
-//	    // delete unnecessary nodes
-//	    if (x.left == null && x.mid == null && x.right == null) {
-//	        return null;
-//	    }
-//	    if (x.mid == null) {
-//	    	System.out.println("ENTROu");
-//	        if (x.left == null) {
-//	            return x.right;
-//	        } else if (x.right == null) {
-//	            return x.left;
-//	        } else {
-//	        	
-//	            Node<T> t = x;
-//	            x = min(t.right);
-//	            System.out.println("MINIMO: " + x.c);
-//	            x.right = deleteMin(t.right);
-//	            x.left = t.left;
-//	        }
-//	    }
-//	    return x;
-//	}
-//
-//	private Node<T> min(Node<T> x) {
-//	    if (x.left == null) {
-//	        return x;
-//	    }
-//	    return min(x.left);
-//	}
-//
-//	private Node<T> deleteMin(Node<T> x) {
-//	    if (x.left == null) {
-//	        return x.right;
-//	    }
-//	    x.left = deleteMin(x.left);
-//	    return x;
-//	}
-
-
-//	public void delete(String key) {
-//	    if (key == null) 
-//	        throw new IllegalArgumentException("calls delete() with null argument");
-//	    if(!this.contains(key))
-//	    	throw new IllegalArgumentException("key dont exist");
-//	    root = delete(root, key, 0);
-//	}
-//
-//	private Node<T> delete(Node<T> x, String key, int d) {
-//	    if (x == null) return null;
-//
-//	    char c = key.charAt(d);
-//	    if      (c < x.c)              x.left  = delete(x.left,  key, d);
-//	    else if (c > x.c)              x.right = delete(x.right, key, d);
-//	    else if (d < key.length() - 1) x.mid   = delete(x.mid,   key, d+1);
-//	    else {
-//	    	System.out.println("X: " + x.c);
-//	    	System.out.println("XMID NULL?" + x.mid == null);
-//	    	System.out.println("XLEFT NULL?" + x.left==null);
-//	    	System.out.println("XRIGHT NULL?" + x.right == null);
-//	        if (x.mid != null) {
-//	        	
-//	            x.mid.val = null; 
-//	            n--;
-//	            return x;
-//	        } 
-//	        if (x.right != null) {
-//	        	System.out.println("ENTROu");
-//	            Node<T> min = getMin(x.right);
-//	            x.c = min.c;
-//	            x.val = min.val;
-//	            x.mid = min.mid;
-//	            x.right = delete(x.right, min.c + "", d);
-//	        } else {
-//	            n--;
-//	            return x.left;
-//	        }
-//	    }
-//	    return x;
-//	}
-//
-//	private Node<T> getMin(Node<T> x) {
-//	    if (x == null) return null;
-//	    if (x.left == null) return x;
-//	    return getMin(x.left);
-//	}
+	
 
 	public void delete(String key) {
 	    if (key == null) {
@@ -478,8 +315,6 @@ public class TST<T> {
 	    return x;
 	}
 
-	
-	//private Node<T> deleteLast
 
 
 

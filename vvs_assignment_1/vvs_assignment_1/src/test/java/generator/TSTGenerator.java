@@ -13,6 +13,7 @@ public class TSTGenerator extends Generator<TST<Integer>>{
 
 	private static final int NUM_KEYS = 15;
 	private static final int MAX_LEN = 10;
+	private static final int VAL_MAX = 100;
     private static final int ASCII_FIRST = 97;
     private static final int ASCII_LAST = 122;
 	
@@ -21,12 +22,12 @@ public class TSTGenerator extends Generator<TST<Integer>>{
 	public TSTGenerator() {
 		 super((Class<TST<Integer>>) (Class) TST.class);
 	}
-
+ 
 
 	@Override
 	public TST<Integer> generate(SourceOfRandomness random, GenerationStatus status) {
 		
-		TST<Integer> genTrie = new TST<>();
+		TST<Integer> genTrie = new TST<>(); 
 		
 		int numKeys = random.nextInt(NUM_KEYS);
 		int cont = 0;
@@ -36,7 +37,7 @@ public class TSTGenerator extends Generator<TST<Integer>>{
 			for (int i = 0; i < string_len; i++) {
 				sb.append((char) random.nextInt(ASCII_FIRST, ASCII_LAST));
 			}
-			int val = random.nextInt(100);
+			int val = random.nextInt(VAL_MAX);
 			if( sb.toString().length() > 0 && !genTrie.contains(sb.toString())) {
 				cont++;
 				genTrie.put(sb.toString(), val);
