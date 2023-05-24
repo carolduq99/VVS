@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AWTTestScript>
+  <component class="javax.swing.JButton" id="C-&gt;F" index="4" parent="JPanel Instance" text="C-&gt;F" window="Convert Celsius to Fahrenheit and back" />
+  <component class="sut.CelsiusConverter" id="Convert Celsius to Fahrenheit and back" root="true" title="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JButton" id="F-&gt;C" index="5" parent="JPanel Instance" text="F-&gt;C" window="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JLayeredPane" id="JLayeredPane Instance" index="1" parent="JRootPane Instance" window="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JPanel" id="JPanel Instance" index="0" parent="JLayeredPane Instance" window="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JRootPane" id="JRootPane Instance" index="0" parent="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JTextField" id="JTextField Instance" index="2" parent="JPanel Instance" window="Convert Celsius to Fahrenheit and back" />
+  <component class="javax.swing.JTextField" id="JTextField Instance 2" index="3" parent="JPanel Instance" window="Convert Celsius to Fahrenheit and back" />
+  <launch args="[]" class="sut.CelsiusConverter" classpath="." method="main" />
+  <sequence>
+    <wait args="Convert Celsius to Fahrenheit and back" class="abbot.tester.ComponentTester" method="assertComponentShowing" />
+    <action args="JTextField Instance,0" class="javax.swing.text.JTextComponent" method="actionClick" />
+    <action args="JTextField Instance,123" method="actionKeyString" />
+    <action args="C-&gt;F" class="javax.swing.AbstractButton" method="actionClick" />
+    <assert component="JTextField Instance 2" method="getText" value="253.4" />
+    <action args="JTextField Instance 2,5,0" class="javax.swing.text.JTextComponent" method="actionSelectText" />
+    <action args="JTextField Instance 2,50" method="actionKeyString" />
+    <action args="F-&gt;C" class="javax.swing.AbstractButton" method="actionClick" />
+    <assert component="JTextField Instance" method="getText" value="10.0" />
+  </sequence>
+  <terminate />
+</AWTTestScript>
+
